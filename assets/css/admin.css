@@ -1,0 +1,499 @@
+/**
+ * Admin styles for Image Crop & WebP Converter
+ */
+
+/* Crop Interface Styles */
+.icwc-crop-interface {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccd0d4;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.icwc-crop-interface h2 {
+  margin-top: 0;
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.icwc-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.icwc-sizes-info {
+  margin-top: 20px;
+}
+
+.icwc-sizes-info h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.icwc-sizes-info table {
+  margin-top: 10px;
+}
+
+.icwc-sizes-info td,
+.icwc-sizes-info th {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Modal Styles */
+.icwc-modal {
+  display: none;
+  position: fixed !important;
+  z-index: 999999 !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.icwc-modal.show {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.icwc-modal-content {
+  background-color: #fefefe !important;
+  padding: 0;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s;
+  position: relative;
+  z-index: 1000000;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.icwc-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 8px 8px 0 0;
+}
+
+.icwc-modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.icwc-modal-close {
+  background: none;
+  border: none;
+  font-size: 32px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.2s;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icwc-modal-close:hover,
+.icwc-modal-close:focus {
+  color: #000;
+}
+
+.icwc-modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.icwc-crop-container {
+  max-height: 500px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icwc-crop-container img {
+  max-width: 100%;
+  display: block;
+}
+
+.icwc-crop-options {
+  margin: 15px 0;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.icwc-crop-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.icwc-crop-options select {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Profile Name Input Section */
+.icwc-crop-options > div {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 1 !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.icwc-modal-body .icwc-crop-options > div {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.icwc-modal .icwc-crop-options > div {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#icwc-crop-profile-name {
+  display: block !important;
+  width: 100% !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  border: 1px solid #ddd !important;
+  border-radius: 4px !important;
+  background-color: #fff !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 1 !important;
+  height: auto !important;
+  min-height: 40px !important;
+}
+
+input#icwc-crop-profile-name {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.icwc-crop-options .description {
+  display: block !important;
+  margin: 5px 0 !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Resize options styling */
+#icwc-enable-resize {
+  cursor: pointer;
+}
+
+#icwc-resize-options input[type="number"] {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#icwc-resize-options input[type="number"]:focus {
+  border-color: #2271b1;
+  outline: none;
+  box-shadow: 0 0 0 1px #2271b1;
+}
+
+.icwc-modal-body label strong {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.icwc-crop-preview {
+  margin-top: 20px;
+}
+
+.icwc-crop-preview h4 {
+  margin-bottom: 10px;
+}
+
+#icwc-preview-box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #f0f0f0;
+}
+
+.icwc-modal-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #ddd;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Button Styles */
+.icwc-crop-button,
+.icwc-regenerate-button,
+.icwc-cleanup-button {
+  transition: all 0.2s;
+}
+
+.icwc-crop-button:hover,
+.icwc-regenerate-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.icwc-cleanup-button:hover {
+  background: #a00;
+  color: #fff;
+  border-color: #a00;
+}
+
+/* Bulk Tools Section */
+.icwc-tools-section {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccd0d4;
+  border-radius: 4px;
+}
+
+.icwc-bulk-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.icwc-bulk-tools button {
+  width: fit-content;
+}
+
+#icwc-bulk-progress {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+#icwc-progress-bar {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+#icwc-progress-bar::-webkit-progress-bar {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+#icwc-progress-bar::-webkit-progress-value {
+  background: linear-gradient(to right, #2271b1, #135e96);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+#icwc-progress-bar::-moz-progress-bar {
+  background: linear-gradient(to right, #2271b1, #135e96);
+  border-radius: 4px;
+}
+
+#icwc-progress-text {
+  margin: 10px 0 0;
+  font-weight: 600;
+  color: #1d2327;
+}
+
+/* Media Library Info Column */
+.icwc-info {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Loading Spinner */
+.icwc-loading {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #2271b1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 782px) {
+  .icwc-modal-content {
+    width: 95%;
+    max-height: 95vh;
+  }
+
+  .icwc-actions {
+    flex-direction: column;
+  }
+
+  .icwc-actions button {
+    width: 100%;
+  }
+
+  .icwc-crop-options label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Cropper.js Custom Styles */
+.cropper-view-box,
+.cropper-face {
+  border-radius: 0;
+}
+
+.cropper-view-box {
+  outline: 1px solid #2271b1;
+}
+
+.cropper-crop-box {
+  border: 2px solid #2271b1;
+}
+
+.cropper-point {
+  background-color: #2271b1;
+  width: 8px;
+  height: 8px;
+}
+
+.cropper-line {
+  background-color: #2271b1;
+}
+
+/* Success/Error Messages */
+.icwc-message {
+  padding: 10px 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.icwc-message.success {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.icwc-message.error {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+.icwc-message.warning {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+}
+
+/* Crop Profile Cards */
+.icwc-crop-profile-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.icwc-crop-profile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icwc-crop-profile-card img {
+  transition: transform 0.3s;
+}
+
+.icwc-crop-profile-card:hover img {
+  transform: scale(1.05);
+}
+
+.icwc-delete-crop-profile:hover {
+  background-color: #f8d7da;
+  border-color: #a00;
+}
+
+.wp-core-ui .button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  justify-content: center;
+}
+
+.wp-core-ui .button .dashicons {
+  margin-top: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+.quicktags-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+}
