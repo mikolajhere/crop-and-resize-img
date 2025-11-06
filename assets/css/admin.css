@@ -480,7 +480,7 @@ input#icwc-crop-profile-name {
   border-color: #a00;
 }
 
-.wp-core-ui .button {
+/* .wp-core-ui .button {
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -496,4 +496,4 @@ input#icwc-crop-profile-name {
 .quicktags-toolbar {
   display: flex;
   flex-wrap: wrap;
-}
+} */
