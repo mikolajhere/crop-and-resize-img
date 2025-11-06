@@ -482,7 +482,7 @@ input#icwc-crop-profile-name {
 
 /* .wp-core-ui .button {
   display: flex;
-  align-items: center;
+  align-items: center; 
   gap: 0.25rem;
   justify-content: center;
 }
